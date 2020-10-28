@@ -5,7 +5,7 @@ const requireAll = require('require-all');
 
 const applicationFiles = requireAll({
   dirname: __dirname,
-  filter: (name) => name === 'index.ts' ? null : name.replace('.ts', ''),
+  filter: (name) => (name === 'index.ts' || name.includes('test.ts')) ? null : name.replace('.ts', ''),
 });
 
 const applications = Object.keys(applicationFiles)

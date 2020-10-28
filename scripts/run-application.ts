@@ -1,6 +1,6 @@
 // @ts-check
 
-import applications from '../applications';
+import applications from '../src/applications';
 
 const minimist = require('minimist');
 
