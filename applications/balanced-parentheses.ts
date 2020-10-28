@@ -19,7 +19,7 @@ const areParenthesesBalanced = (payload: Payload): boolean => {
   const stack = new Stack();
 
   if (!payload.expression) {
-    throw new Error('Please, provide the expression parameter');
+    throw new Error('Please, provide the "expression" parameter');
   }
 
   for (const character of payload.expression) {
