@@ -155,6 +155,21 @@ describe('LinkedList', () => {
     });
   });
 
+  describe('insert', () => {
+    it('inserts item properly', () => {
+      ds.push('A');
+      ds.push('B');
+      ds.push('C');
+      expect(ds.insert('D', 0)).to.equal(true);
+
+      expect(ds.size()).equal(4);
+      expect(ds.toString()).equal('D,A,B,C');
+      expect(ds.insert('O', 3)).to.equal(true);
+      expect(ds.size()).equal(5);
+      expect(ds.toString()).equal('D,A,B,O,C');
+    });
+  });
+
   describe('clear', () => {
     it('removes all the elements from the collection', () => {
       const items = ['A', 'B', 'C', 'D', 'E'];
