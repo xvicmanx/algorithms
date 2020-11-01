@@ -19,11 +19,20 @@ describe('LinkedList', () => {
         ds.push(item);
       });
       expect(ds.size()).equal(5);
+      expect(ds.empty()).equal(false);
 
       ds.removeAt(ds.size() - 1);
       ds.removeAt(ds.size() - 1);
 
       expect(ds.size()).equal(3);
+      expect(ds.empty()).equal(false);
+
+      ds.removeAt(1);
+      ds.removeAt(0);
+      ds.removeAt(0);
+
+      expect(ds.size()).equal(0);
+      expect(ds.empty()).equal(true);
     }); 
   });
 
@@ -161,6 +170,7 @@ describe('LinkedList', () => {
       ds.push('B');
       ds.push('C');
       expect(ds.insert('D', 0)).to.equal(true);
+      expect(ds.insert('F', 10)).to.equal(false);
 
       expect(ds.size()).equal(4);
       expect(ds.toString()).equal('D,A,B,C');
