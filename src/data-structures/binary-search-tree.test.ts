@@ -3,10 +3,12 @@ import BinarySearchTree from './binary-search-tree';
 
 describe('BinarySearchTree', () => {
   let ds;
+  let emptyDs;
   let items;
 
   beforeEach(() => {
     ds = new BinarySearchTree();
+    emptyDs = new BinarySearchTree();
     items = [5, 7, 4, 10, 1, 9, 3, 8, 2, 0, 6];
 
     items.forEach(item => {
@@ -15,6 +17,10 @@ describe('BinarySearchTree', () => {
   });
 
   describe('search', () => {
+    it('return false while searching in a empty tree', () => {
+      expect(emptyDs.search(1)).to.equal(false);
+    });
+  
     it('searches the items properly', () => {
       items.forEach(item => {
         expect(ds.search(item)).to.equal(true);
@@ -56,18 +62,32 @@ describe('BinarySearchTree', () => {
   });
 
   describe('min', () => {
+    it('return null if the tree is empty', () => {
+      expect(emptyDs.min()).to.equal(null);
+    });
+
     it('returns the correct minimum', () => {
       expect(ds.min()).to.equal(0);
     });
   });
 
   describe('max', () => {
+    it('return null if the tree is empty', () => {
+      expect(emptyDs.max()).to.equal(null);
+    });
+
     it('returns the correct maximum', () => {
       expect(ds.max()).to.equal(10);
     });
   });
 
   describe('remove', () => {
+    it('does not fail while trying to remove items from an empty tree', () => {
+      expect(() => {
+        emptyDs.remove(1);
+      }).to.not.throw();
+    });
+
     it('can remove items', () => {
       expect(ds.max()).to.equal(10);
       expect(ds.min()).to.equal(0);

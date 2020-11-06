@@ -187,6 +187,10 @@ class BinarySearchTree {
   }
 
   private _maxItemFromTreeNode(node: TreeNode) {
+    if (!node) {
+      return null;
+    }
+
     if (!node.right) {
       return node.value;
     }
