@@ -102,10 +102,12 @@ describe('BinarySearchTree', () => {
       expect(ds.min()).to.equal(1);
 
       ds.remove(1);
+  
       expect(ds.search(1)).to.equal(false);
       expect(ds.min()).to.equal(2);
 
       ds.remove(7);
+  
       expect(ds.search(7)).to.equal(false);
       expect(ds.max()).to.equal(9);
       expect(ds.min()).to.equal(2);
