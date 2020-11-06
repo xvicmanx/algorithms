@@ -18,6 +18,8 @@ const DEFAULT_COMPARER = (first: any, second: any): number => {
   return 0;
 };
 
+type TreeBranchName = 'left' | 'right';
+
 /**
  * A BinarySearchTree is a data structure that store items in a hierarchical order.
  * This structure has nodes which contain link/references to other nodes, a left node and right node.
@@ -43,11 +45,7 @@ class BinarySearchTree {
    */
   insert(item: any) {
     if (!this._root) {
-      this._root = {
-        value: item,
-        left: null,
-        right: null,
-      };
+      this._root = this._createNode(item);
     } else {
       this._root = this._insertItem(this._root, item);
     }
@@ -91,7 +89,6 @@ class BinarySearchTree {
    * @return {any} The item with minimum value
    */
   min() {
-    console.log('Root', this._root);
     return this._minItemFromTreeNode(this._root);
   }
 
@@ -117,23 +114,24 @@ class BinarySearchTree {
 
     const differenceSign = this._itemComparer(node.value, item);
 
-    if (!differenceSign) {
-      if (!node.left && !node.right) {
-        return null;
-      } else if (node.left && !node.right) {
-        return node.left;
-      } else if (!node.left && node.right) {
-        return node.right;
-      } else {
-        const min = this._minTreeNode(node.right);
-        node.value = min.value;
-        node.right = this._removeTreeNode(node.right, min.value);
-        return node;
-      }
+    if (differenceSign) {
+      const branchName = this._branchName(differenceSign);
+      node[branchName] = this._removeTreeNode(node[branchName], item);
+
+      return node;
     }
 
-    const branchName = differenceSign > 0 ? 'left' : 'right';
-    node[branchName] = this._removeTreeNode(node[branchName], item);
+    if (!node.left && !node.right) {
+      return null;
+    } else if (node.left && !node.right) {
+      return node.left;
+    } else if (!node.left && node.right) {
+      return node.right;
+    }
+
+    const minNode = this._minTreeNode(node.right);
+    node.value = minNode.value;
+    node.right = this._removeTreeNode(node.right, minNode.value);
 
     return node;
   }
@@ -177,7 +175,6 @@ class BinarySearchTree {
   }
 
   private _minItemFromTreeNode(node: TreeNode) {
-    console.log(node);
     if (!node) {
       return null;
     }
@@ -208,37 +205,39 @@ class BinarySearchTree {
       return true;
     }
 
-    if (differenceSign > 0) {
-      return this._searchItem(node.left, item);
-    }
-
-    return this._searchItem(node.right, item);
+    const branchName = this._branchName(differenceSign);
+  
+    return this._searchItem(node[branchName], item);
   }
 
   private _insertItem(node: TreeNode, item: any) {
     const differenceSign = this._itemComparer(node.value, item);
-
-    console.log(node.value, item);
   
     if (!differenceSign) {
       return null;
     }
   
-    const branchName = differenceSign > 0 ? 'left' : 'right';
+    const branchName = this._branchName(differenceSign);
   
     if (!node[branchName]) {
-      node[branchName] = {
-        value: item,
-        left: null,
-        right: null,
-      };
-  
-      return node;
+      node[branchName] = this._createNode(item);
+    } else {
+      node[branchName] = this._insertItem(node[branchName], item);
     }
-  
-    node[branchName] = this._insertItem(node[branchName], item);
 
     return node;
+  }
+
+  private _branchName(comparisonSign: number): TreeBranchName {
+    return comparisonSign > 0 ? 'left' : 'right';
+  }
+
+  private _createNode(item: any): TreeNode {
+    return {
+      value: item,
+      left: null,
+      right: null,
+    };
   }
 }
 
