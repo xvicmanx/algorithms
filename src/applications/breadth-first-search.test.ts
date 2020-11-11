@@ -38,6 +38,17 @@ describe('breadthFirstSearch', () => {
     }).to.throw();
   });
 
+  it('fails if the vertice does not belong to the graph', () => {
+    const visitedItems = [];
+    expect(() => {
+      breadthFirstSearch({
+        startVertice: 'Z',
+        graph,
+        callback: (vertice) => visitedItems.push(vertice),
+      });
+    }).to.throw();
+  });
+
   it('fails if the graph is missing', () => {
     const visitedItems = [];
     expect(() => {
