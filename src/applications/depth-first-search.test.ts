@@ -45,6 +45,6 @@ describe('depthFirstSearch', () => {
       callback: (vertice) => visitedItems.push(vertice),
     });
 
-    expect(visitedItems).to.eql(['F', 'E', 'D', 'C', 'B', 'A']);
+    expect(visitedItems).to.eql(['F', 'E', 'C', 'D', 'B', 'A']);
   });
 });

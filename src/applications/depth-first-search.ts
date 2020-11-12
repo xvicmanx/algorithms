@@ -1,9 +1,6 @@
 // @ts-check
 
-import {
-  Graph,
-  Stack,
-} from '../data-structures';
+import { Graph } from '../data-structures';
 
 interface Payload {
   graph?: Graph;
@@ -13,6 +10,34 @@ interface Payload {
 const missingParam = (payload: Payload, name: string): boolean => payload[name] === null || typeof payload[name] === 'undefined';
 const throwMissingParamError = (name: string) => {
   throw new Error(`Please, provide the "${name}" parameter`);
+};
+
+const depthFirstSearchVisit = (
+  graph: Graph,
+  vertice: any,
+  seen: Object,
+  callback: Function,
+) => {
+  if (seen[vertice]) {
+    return;
+  }
+
+  seen[vertice] = true;
+
+  graph.adjacents(vertice).forEach((adjacentVertice) => {
+    if (!seen[adjacentVertice]) {
+      depthFirstSearchVisit(
+        graph,
+        adjacentVertice,
+        seen,
+        callback
+      );
+    }
+  });
+
+  if (callback) {
+    callback(vertice);
+  }
 };
 
 /**
@@ -25,29 +50,16 @@ const depthFirstSearch = (payload: Payload) => {
     throwMissingParamError('graph');
   }
 
-  const stack = new Stack();
-  const seen = {};
+  const seen: Object = {};
 
   payload.graph.vertices().forEach((vertice) => {
-    stack.push(vertice);
-    seen[vertice] = true;
+    depthFirstSearchVisit(
+      payload.graph,
+      vertice,
+      seen,
+      payload.callback,
+    );
   });
-
-  while (!stack.empty()) {
-    const vertice = stack.pop();
-    seen[vertice] = true;
-
-    if (payload.callback) {
-      payload.callback(vertice);
-    }
-
-    payload.graph.adjacents(vertice).forEach((adjacentVertice) => {
-      if (!seen[adjacentVertice]) {
-        stack.push(adjacentVertice);
-        seen[adjacentVertice] = true;
-      }
-    });
-  }
 };
 
 
