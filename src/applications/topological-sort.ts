@@ -28,8 +28,6 @@ const topologicalSort = (payload: Payload) => {
     callback: item => items.push(item),
   });
 
-  console.log(items);
-
   items.reverse();
 
   return items;
