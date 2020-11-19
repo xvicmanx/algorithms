@@ -1,22 +1,16 @@
 // @ts-check
 
+import {
+  missingParam,
+  throwMissingParamError,
+  isGreater,
+  DEFAULT_COMPARER,
+} from '../helpers';
+
 interface Payload {
   items?: Array<any>;
   comparer?: Function,
 }
-
-const missingParam = (payload: Payload, name: string): boolean => payload[name] === null || typeof payload[name] === 'undefined';
-const throwMissingParamError = (name: string) => {
-  throw new Error(`Please, provide the "${name}" parameter`);
-};
-
-const DEFAULT_COMPARER = (a, b) => (a > b ? 1 : -1);
-const isGreater = (a, b, comparer) => comparer(a, b) === 1;
-const swap = (a, b, items) => {
-  const temp = items[a];
-  items[a] = items[b];
-  items[b] = temp;
-};
 
 /**
  * Sorts a given array using the insertion sort algorithm

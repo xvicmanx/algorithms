@@ -1,22 +1,17 @@
 // @ts-check
 
+import {
+  missingParam,
+  throwMissingParamError,
+  isGreater,
+  DEFAULT_COMPARER,
+  swap,
+} from '../helpers';
+
 interface Payload {
   items?: Array<any>;
   comparer?: Function,
 }
-
-const missingParam = (payload: Payload, name: string): boolean => payload[name] === null || typeof payload[name] === 'undefined';
-const throwMissingParamError = (name: string) => {
-  throw new Error(`Please, provide the "${name}" parameter`);
-};
-
-const DEFAULT_COMPARER = (a, b) => (a > b ? 1 : -1);
-const inInverseOrder = (a, b, comparer) => comparer(a, b) === 1;
-const swap = (a, b, items) => {
-  const temp = items[a];
-  items[a] = items[b];
-  items[b] = temp;
-};
 
 /**
  * Sorts a given array using the bubble sort algorithm
@@ -34,7 +29,7 @@ const bubbleSort = (payload: Payload): Array<any> => {
 
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size - i - 1; j++) {
-      if (inInverseOrder(items[j], items[j + 1], cmp)) {
+      if (isGreater(items[j], items[j + 1], cmp)) {
         swap(j, j + 1, items);
       }
     }
