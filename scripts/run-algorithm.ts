@@ -1,6 +1,6 @@
 // @ts-check
 
-import applications from '../src/applications';
+import algorightms from '../src/algorightms';
 
 const minimist = require('minimist');
 
@@ -8,18 +8,18 @@ const minimist = require('minimist');
 const args = minimist(process.argv.slice(2));
 
 if (!args.name) {
-  throw new Error('Please, provide the name of the application to run');
+  throw new Error('Please, provide the name of the algorightm to run');
 }
 
-const application = applications[args.name];
+const algorightm = algorightms[args.name];
 
-if (!application) {
-  throw new Error(`Application for name "${args.name}" does not exist`);
+if (!algorightm) {
+  throw new Error(`Algorightm for name "${args.name}" does not exist`);
 }
 
 const { log } = console;
 
-log(`Running application "${args.name}"`);
+log(`Running algorightm "${args.name}"`);
 log('  Params:');
 
 Object.entries(args).forEach(entry => {
@@ -30,7 +30,7 @@ Object.entries(args).forEach(entry => {
   log(`    ${entry[0]} = ${entry[1]}`);
 });
 
-const result = application(args);
+const result = algorightm(args);
 
 log(`  Result: ${result}`);
 
