@@ -1,3 +1,7 @@
+
+  
+  ![Tests](https://github.com/xvicmanx/algorithms/workflows/tests/badge.svg)
+  
 # Run applications
 
 ## Reverse text
