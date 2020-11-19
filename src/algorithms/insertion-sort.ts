@@ -19,7 +19,7 @@ const swap = (a, b, items) => {
 };
 
 /**
- * Sorts a given array using the bubble sort algorithm
+ * Sorts a given array using the insertion sort algorithm
  * @param {Payload} payload - payload
  * @return {Array<any>} the sorted array
  */
