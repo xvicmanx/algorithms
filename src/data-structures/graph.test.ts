@@ -135,4 +135,42 @@ describe('Graph', () => {
       });
     });
   });
+
+  context('Weighted graph', () => {
+    let weightedEdges;
+
+    const initWeightedGraph = (directed = false) => {
+      ds = new Graph(directed);
+      const vertices = ['A', 'B', 'C', 'D', 'E'];
+      weightedEdges = [
+        ['A', 'B', 10],
+        ['A', 'C', 20],
+        ['B', 'D', 30],
+        ['C', 'E', 40],
+        ['C', 'D', 50],
+        ['E', 'F', 60]
+      ];
+  
+      vertices.forEach((vertice) => {
+        ds.addVertice(vertice);
+      });
+  
+      weightedEdges.forEach((edge) => {
+        ds.addEdge(edge[0], edge[1], edge[2]);
+      });
+    };
+
+    beforeEach(() => {
+      initWeightedGraph(true);
+    });
+  
+    describe('getEdgeValue', () => {
+      it('does return the correct value for each edge', () => {
+        weightedEdges.forEach((edge) => {
+          const value = ds.getEdgeValue(edge[0], edge[1]);
+          expect(value).to.eql(edge[2]);
+        });
+      });
+    });
+  });
 });

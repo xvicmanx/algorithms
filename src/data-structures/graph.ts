@@ -9,7 +9,7 @@ class Graph {
   // To store the graph's vertices
   private _vertices: Array<any>;
   // To store vertices adjacents
-  private _adjacents: { [key: string]: Array<any> };
+  private _adjacents: { [key: string]: Object };
   // A generator of a key for the vertice
   private _keyGenerator: Function;
   // To indicate if the graph is directed or not
@@ -42,8 +42,9 @@ class Graph {
    * Adds an edge between vertices
    * @param {any} vertice first vertice
    * @param {any} anotherVertice second vertice
+   * @param {any} value value of the edge
    */
-  addEdge(vertice: any, anotherVertice: any) {
+  addEdge(vertice: any, anotherVertice: any, value: any = 1) {
     if (
       !this._validVertice(vertice) ||
       !this._validVertice(anotherVertice)
@@ -53,11 +54,19 @@ class Graph {
 
     this.addVertice(vertice);
     this.addVertice(anotherVertice);
-    this._addAdjacent(vertice, anotherVertice);
+    this._addAdjacent(vertice, anotherVertice, value);
 
     if (!this._directed) {
-      this._addAdjacent(anotherVertice, vertice);
+      this._addAdjacent(anotherVertice, vertice, value);
     }
+  }
+
+  getEdgeValue(vertice: any, anotherVertice): any {
+    if (!this._adjacents[vertice]) {
+      return undefined;
+    }
+
+    return this._adjacents[vertice][anotherVertice];
   }
 
   /**
@@ -78,8 +87,8 @@ class Graph {
     }
 
     const verticeKey = this._keyGenerator(vertice);
-    this._adjacents[verticeKey] = this._adjacents[verticeKey] || [];
-    return [...this._adjacents[verticeKey]];
+    this._adjacents[verticeKey] = this._adjacents[verticeKey] || {};
+    return Object.keys(this._adjacents[verticeKey]);
   }
 
   /**
@@ -105,11 +114,12 @@ class Graph {
     return vertice !== null && vertice !== undefined;
   }
 
-  private _addAdjacent(vertice: string, adjacentVertice: any) {
+  private _addAdjacent(vertice: string, adjacentVertice: any, value: any) {
     const verticeKey = this._keyGenerator(vertice);
-    this._adjacents[verticeKey] = this._adjacents[verticeKey] || [];
-    if (!this._adjacents[verticeKey].includes(adjacentVertice)) {
-      this._adjacents[verticeKey].push(adjacentVertice);
+    this._adjacents[verticeKey] = this._adjacents[verticeKey] || {};
+    const adjacents = Object.keys(this._adjacents[verticeKey]);
+    if (!adjacents.includes(adjacentVertice)) {
+      this._adjacents[verticeKey][adjacentVertice] = value;
     }
   }
 }
