@@ -47,6 +47,7 @@ const internalMergeSort = (
   comparer: Function,
 ): Array<any> => {
   const total = items.length;
+
   if (total <= 1) {
     return items;
   }
