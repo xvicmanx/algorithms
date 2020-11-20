@@ -3,9 +3,6 @@
 import {
   missingParam,
   throwMissingParamError,
-  isGreater,
-  DEFAULT_COMPARER,
-  swap,
   findMaxNumber,
   findMinNumber,
 } from '../helpers';
