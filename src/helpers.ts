@@ -21,3 +21,8 @@ export const swap = (a, b, items) => {
   items[a] = items[b];
   items[b] = temp;
 };
+
+export const findMaxNumber = (items: Array<number>) => items.reduce((maximum, item) => Math.max(maximum, item), items[0]);
+
+export const findMinNumber = (items: Array<number>) => items.reduce((minimum, item) => Math.max(minimum, item), items[0]);
+
