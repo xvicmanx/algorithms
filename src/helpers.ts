@@ -15,6 +15,7 @@ export const DEFAULT_COMPARER = (a, b) => {
 
 export const isGreater = (a, b, comparer) => comparer(a, b) === 1;
 export const isSmaller = (a, b, comparer) => comparer(a, b) === -1;
+export const isEqual = (a, b, comparer) => comparer(a, b) === 0;
 
 export const swap = (a, b, items) => {
   const temp = items[a];
