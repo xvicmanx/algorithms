@@ -7,17 +7,56 @@
 # Algorithms and data structures
 Algorithms and data structures implementations in Javascript.
 
-## Run applications
-### Reverse text
+## Playground
+A playground console has been created to play around with algorithms and data structures.
+
+To start the playground run:
 ```
-npm run application -- --name="reverse-text" --text="hola"
+npm run playground
 ```
 
-### Balanced Parentheses
+### Example 1 Stack data structure
 ```
-npm run application -- --name="balanced-parentheses" --expression="([a+b] + x)"
+npm run playground
+```
+To start the playground
+
+And then type
+```
+const stack = new structures.Stack();
+stack.push('O');
+stack.push('L');
+stack.push('L');
+stack.push('E');
+stack.push('H');
+
+while(!stack.empty()) {
+  console.log(stack.pop());
+}
+
 ```
 
+### Example 2 Mergesort algorithm
+```
+npm run playground
+```
+To start the playground
+
+And then type
+```
+const result = algorithms.mergeSort({
+  items: [
+    6,
+    5,
+    3,
+    4,
+    1,
+    2,
+  ],
+});
+
+console.log(result);
+```
 
 ## Installation
 
@@ -53,5 +92,6 @@ npm run coverage
 - [chai](https://ghub.io/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [mocha](https://ghub.io/mocha): simple, flexible, fun test framework
 - [nyc](https://ghub.io/nyc): the Istanbul command line interface
+- [repl](https://ghub.io/repl): A simple fast template libray.
 - [ts-node](https://ghub.io/ts-node): TypeScript execution environment and REPL for node.js, with source map support
 - [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development

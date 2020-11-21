@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "application": "ts-node ./scripts/run-application.ts",
+    "playground": "ts-node ./scripts/playground.ts",
     "test": "mocha -r ts-node/register src/**/*.test.ts",
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
   },
   "author": "",
   "license": "ISC",
   "nyc": {
-    "exclude": ["src/**/*.test.ts"]
+    "exclude": [
+      "src/**/*.test.ts"
+    ]
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
@@ -19,6 +21,7 @@
     "chai": "^4.2.0",
     "mocha": "^8.2.0",
     "nyc": "^15.1.0",
+    "repl": "^0.1.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },

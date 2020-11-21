@@ -1,6 +1,7 @@
 // @ts-check
 
 const requireAll = require('require-all');
+const camelCase = require('camelcase');
 
 
 const applicationFiles = requireAll({
@@ -11,7 +12,7 @@ const applicationFiles = requireAll({
 const applications = Object.keys(applicationFiles)
   .reduce((acc, key) => ({
     ...acc,
-    [key]: applicationFiles[key].default,
+    [camelCase(key)]: applicationFiles[key].default,
   }), {});
 
 export default applications;
