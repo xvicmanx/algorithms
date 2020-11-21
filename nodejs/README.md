@@ -4,7 +4,7 @@
 
 
   
-# Algorithms and Data Structures
+# Algorithms and data structures
 Algorithms and data structures implementations in Javascript.
 
 ## Run applications
