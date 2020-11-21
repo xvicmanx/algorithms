@@ -11,7 +11,7 @@ describe('shuffle', () => {
     const differences = [];
 
     for (let i = 0; i < 10; i++) {
-      differences.push(JSON.stringify(shuffle({ items })) === JSON.stringify([5, 4, 3, 2, 1]));
+      differences.push(JSON.stringify(shuffle({ items })) !== JSON.stringify([5, 4, 3, 2, 1]));
     }
 
     expect(differences.some(x => x)).to.eq(true);

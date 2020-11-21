@@ -24,7 +24,6 @@ const shuffle = (payload: Payload): Array<any> => {
   const size = items.length;
 
   for (let i = 0; i < size; i++) {
-    console.log(size - i - 1);
     swap(
       size - i - 1,
       Math.floor(Math.random() * (size - i)),
