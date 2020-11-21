@@ -4,8 +4,8 @@
 
 
   
-# Algorithms
-Algorithms implementations in nodejs and practices for academic purposes.
+# Algorithms and Data Structures
+Algorithms and data structures implementations in Javascript.
 
 ## Run applications
 ### Reverse text
