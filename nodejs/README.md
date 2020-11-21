@@ -5,8 +5,7 @@
 
   
 # Algorithms
-Algorithms implementations and practices for academic purposes.
-
+Algorithms implementations in nodejs and practices for academic purposes.
 
 ## Run applications
 ### Reverse text
@@ -56,7 +55,3 @@ npm run coverage
 - [nyc](https://ghub.io/nyc): the Istanbul command line interface
 - [ts-node](https://ghub.io/ts-node): TypeScript execution environment and REPL for node.js, with source map support
 - [typescript](https://ghub.io/typescript): TypeScript is a language for application scale JavaScript development
-
-## License
-
-ISC
