@@ -1,15 +1,20 @@
 
   
   ![Tests](https://github.com/xvicmanx/algorithms/workflows/tests/badge.svg)
-  
-# Run applications
 
-## Reverse text
+
+  
+# Algorithms
+Algorithms implementations and practices for academic purposes.
+
+
+## Run applications
+### Reverse text
 ```
 npm run application -- --name="reverse-text" --text="hola"
 ```
 
-## Balanced Parentheses
+### Balanced Parentheses
 ```
 npm run application -- --name="balanced-parentheses" --expression="([a+b] + x)"
 ```
