@@ -137,7 +137,7 @@ interface Payload {
  * @param {Payload} payload - payload
  * @return {boolean} to indicate if the maze was solved
  */
-const solveSudoku = (payload: Payload): boolean => {
+const solveMaze = (payload: Payload): boolean => {
   if (missingParam(payload, 'maze')) {
     throwMissingParamError('maze');
   }
@@ -159,4 +159,4 @@ const solveSudoku = (payload: Payload): boolean => {
   return solvePuzzle(puzzle);
 };
 
-export default solveSudoku;
+export default solveMaze;
