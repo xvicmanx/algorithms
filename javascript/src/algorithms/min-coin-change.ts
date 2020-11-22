@@ -4,6 +4,8 @@ import {
   missingParam,
   throwMissingParamError,
   findMaxNumber,
+  argMin,
+  minimum,
 } from '../helpers';
 
 interface Payload {
@@ -49,15 +51,13 @@ const minCoinChange = (payload: Payload): Result => {
     } else {
       let minimumValue = INF;
       let minCoin = -1;
-      coins
-        .filter(coin => coin <= m)
-        .forEach((coin) => {
-          const value = numberOfCoins[m - coin];
-          if (value < minimumValue) {
-            minCoin = coin;
-            minimumValue = value;
-          }
-        });
+      const validCoins = coins.filter(coin => coin <= m);
+
+      if (validCoins.length) {
+        const fn = coin => numberOfCoins[m - coin] || 0;
+        minCoin = argMin(fn).forItemsIn(validCoins);
+        minimumValue = minimum(fn).forItemsIn(validCoins);
+      }
 
       if (minCoin > 0) {
         numberOfCoins[m] = 1 + minimumValue;

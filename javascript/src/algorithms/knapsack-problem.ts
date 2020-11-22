@@ -4,6 +4,8 @@ import {
   missingParam,
   throwMissingParamError,
   findMaxNumber,
+  argMax,
+  maximum,
 } from '../helpers';
 
 interface Item {
@@ -49,15 +51,13 @@ const knapsackProblem = (payload: Payload): Result => {
   for (let weight = 0; weight <= capacity; weight++) {
     let maximumValue = 0;
     let maximumItem = null;
-    items
-      .filter(item => item.weight <= weight)
-      .forEach((item) => {
-        const value = item.value + sackValue[weight - item.weight];
-        if (value > maximumValue) {
-          maximumItem = item;
-          maximumValue = value;
-        }
-      });
+    const validItems = items.filter(item => item && item.weight <= weight);
+  
+    if (validItems.length) {
+      const fn = item => item.value + sackValue[weight - item.weight];
+      maximumItem = argMax(fn).forItemsIn(validItems);
+      maximumValue = maximum(fn).forItemsIn(validItems);
+    }
 
     if (maximumItem) {
       sackValue[weight] = maximumValue;
