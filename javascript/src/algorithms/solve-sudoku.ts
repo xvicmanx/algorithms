@@ -20,7 +20,7 @@ class SudokuPuzzle implements Puzzle {
   private blocks: number;
   private numbers: number;
 
-  constructor(state: Array<Array<number>>, size: Size = 'SMALL') {
+  constructor(state: Array<Array<number>>, size: Size = 'LARGE') {
     this.state = state;
     this.cache = {};
     this.blocks = size === 'SMALL' ? 2 : 3;
@@ -160,6 +160,7 @@ class SudokuPuzzle implements Puzzle {
 
 interface Payload {
   state?: Array<Array<number>>;
+  size?: Size;
 }
 
 /**
@@ -172,18 +173,12 @@ const solveSudoku = (payload: Payload): boolean => {
     throwMissingParamError('state');
   }
 
-  const sudokuPuzzle = new SudokuPuzzle(payload.state);
+  const sudokuPuzzle = new SudokuPuzzle(
+    payload.state,
+    payload.size,
+  );
 
   return solvePuzzle(sudokuPuzzle);
 };
-
-const state = [
-  [1, 0, 4, 0],
-  [4, 3, 0, 2],
-  [3, 4, 2, 1],
-  [2, 1, 3, 4],
-];
-
-// algorithms.solveSudoku({ state });
 
 export default solveSudoku;
