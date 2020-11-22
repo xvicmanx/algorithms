@@ -5,7 +5,7 @@
 
   
 # Algorithms and data structures
-Algorithms and data structures implementations in Javascript.
+Algorithms and data structures implementations in javascript.
 
 ## Playground
 A playground console has been created to play around with algorithms and data structures.
