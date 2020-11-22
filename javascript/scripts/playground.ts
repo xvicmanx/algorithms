@@ -5,6 +5,10 @@ import * as structures from '../src/data-structures';
 
 const repl = require('repl');
 
+process.on('SIGINT', () => {
+  process.exit();
+});
+
 (async () => {
   const { log, time, timeEnd } = console;
 
