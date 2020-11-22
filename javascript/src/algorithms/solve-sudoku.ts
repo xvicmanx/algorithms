@@ -164,9 +164,9 @@ interface Payload {
 }
 
 /**
- * Solves a puzzle using the backtracking algorithm
+ * Solves a sudoku pluzzle
  * @param {Payload} payload - payload
- * @return {boolean} to indicate if the puzzle was solved
+ * @return {boolean} to indicate if the sudoku was solved
  */
 const solveSudoku = (payload: Payload): boolean => {
   if (missingParam(payload, 'state')) {
