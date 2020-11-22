@@ -19,7 +19,7 @@ interface Result {
 /**
  * Finds the minimum number of coins necessary to give change of a certain amoung
  * @param {Payload} payload - payload
- * @return {number} The minimum number of coins
+ * @return {Result} The optimal solution
  */
 const minCoinChange = (payload: Payload): Result => {
   if (missingParam(payload, 'coins')) {
