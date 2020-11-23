@@ -18,8 +18,8 @@ Algorithms and data structures implementations in javascript.
 | [Set](#Set) | A Set is an unordered data structure that contains only unique elements. It behaves similar to the matematical set {} |
 | [Binary Search Tree](#BinarySearchTree) | A BinarySearchTree is a data structure that store items in a hierarchical order. This structure has nodes which contain link/references to other nodes, a left node and right node. The node to the left is less than the parent and the right is greater than the parent. |
 | [Heap](#Heap) | A Heap is a data structure that forms a kind of binary tree symbolically. In it every parent node is greater (max heap) or smaller (min heap) than this corresponding children. At the root of the tree the element is the greatest (max heap) or smallest (min heap). |
-
 | [Graph](#Graph) | A Graph is a non-linear data structure contains of nodes (vertices) and edges. The nodes are connected through the edges. |
+
 
 <a name="Queue"></a>
 
