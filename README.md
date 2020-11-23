@@ -2,7 +2,7 @@
 Algorithms and data structures implementations in different languages.
 
 ## Languages
-  [Javascript](nodejs/README.md)
+  [Javascript](javascript/README.md)
 
 ## License
 
