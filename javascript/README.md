@@ -7,6 +7,71 @@
 # Algorithms and data structures
 Algorithms and data structures implementations in javascript.
 
+## Data structures
+
+| Name | Description |
+| ----------- | ------------ |
+| [Queue](#Queue) | A Queue is an ordered data structure which follows the FIFO (First In First Out) strategy to access its internal items.This means that the first element added to the collection is the first accessible and being able to taken out. |
+| [Stack](#Stack) | A Stack is an ordered data structure which follows the LIFO (Last In First Out) strategy to access its internal items. This means that the last element added to the collection is the first accessible and being able to taken out. |
+| [Dequeue](#Dequeue) | A Dequeue is an ordered data structure which follows the FIFO or LIFO (First In First Out or Last In First Out) strategy to access its internal items. This means that the first or last element added to the collection can be accessible and taken out. It can also add elements to the front or the back of the collection. |
+| [Linked List](#LinkedList) | A LinkedList is a data structure that stores its elements one linking to the other. |
+| [Set](#Set) | A Set is an unordered data structure that contains only unique elements. It behaves similar to the matematical set {} |
+| [Binary Search Tree](#BinarySearchTree) | A BinarySearchTree is a data structure that store items in a hierarchical order. This structure has nodes which contain link/references to other nodes, a left node and right node. The node to the left is less than the parent and the right is greater than the parent. |
+| [Heap](#Heap) | A Heap is a data structure that forms a kind of binary tree symbolically. In it every parent node is greater (max heap) or smaller (min heap) than this corresponding children. At the root of the tree the element is the greatest (max heap) or smallest (min heap). |
+
+| [Graph](#Graph) | A Graph is a non-linear data structure contains of nodes (vertices) and edges. The nodes are connected through the edges. |
+
+<a name="Queue"></a>
+
+### Queue
+
+A Queue is an ordered data structure which follows the FIFO (First In First Out) strategy to access its internal items.This means that the first element added to the collection is the first accessible and being able to taken out.
+
+<a name="Stack"></a>
+
+### Stack
+
+A Stack is an ordered data structure which follows the LIFO (Last In First Out) strategy to access its internal items. This means that the last element added to the collection is the first accessible and being able to taken out.
+
+<a name="Dequeue"></a>
+
+### Dequeue
+
+A Dequeue is an ordered data structure which follows the FIFO or LIFO (First In First Out or Last In First Out) strategy to access its internal items. This means that the first or last element added to the collection can be accessible and taken out. It can also add elements to the front or the back of the collection.
+
+
+<a name="LinkedList"></a>
+
+### Linked List
+
+A LinkedList is a data structure that stores its elements one linking to the other.
+
+<a name="Set"></a>
+
+### Set
+
+A Set is an unordered data structure that contains only unique elements. It behaves similar to the matematical set {}
+
+
+<a name="BinarySearchTree"></a>
+
+### Binary Search Tree
+
+A Binary Search Tree is a data structure that store items in a hierarchical order. This structure has nodes which contain link/references to other nodes, a left node and right node. The node to the left is less than the parent and the right is greater than the parent.
+
+<a name="Heap"></a>
+
+### Heap
+
+A Heap is a data structure that forms a kind of binary tree symbolically. In it every parent node is greater (max heap) or smaller (min heap) than this corresponding children. At the root of the tree the element is the greatest (max heap) or smallest (min heap).
+
+<a name="Graph"></a>
+
+### Graph
+
+A Graph is a non-linear data structure contains of nodes (vertices) and edges. The nodes are connected through the edges.
+
+
 ## Playground
 A playground console has been created to play around with algorithms and data structures.
 
