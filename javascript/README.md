@@ -79,6 +79,20 @@ A Dequeue is an ordered data structure which follows the FIFO or LIFO (First In 
 
 A LinkedList is a data structure that stores its elements one linking to the other.
 
+| Method | Description |
+| ----------- | ------------ |
+| push  | Inserts an item to the end of list |
+| insert  | Inserts an item at a given position |
+| indexOf | Returns the position of a given item in the list |
+| getElementAt | Returns the value of an item at a given position in the list |
+| remove | Removes an item from the list |
+| removeAt | Removes an item at a given position |
+| size    | Returns the size of the Stack which is the number of elements inserted |
+| empty | Returns whether the stack is empty or not |
+| clear    | Clears the stack |
+| toString |  Returns the string representation of the stack |
+
+
 <a name="Set"></a>
 
 ### Set
