@@ -135,6 +135,16 @@ A Binary Search Tree is a data structure that store items in a hierarchical orde
 
 A Heap is a data structure that forms a kind of binary tree symbolically. In it every parent node is greater (max heap) or smaller (min heap) than this corresponding children. At the root of the tree the element is the greatest (max heap) or smallest (min heap).
 
+| Method | Description |
+| ----------- | ------------ |
+| insert | Inserts an item to the top of the heap |
+| peek  | Reads the element at the top of the heap without removing it |
+| extract  | Removes the element at the top of the heap and return it |
+| size  | Returns the size of the Heap which is the number of elements inserted |
+| empty  | Returns whether the heap is empty or not |
+| clear  | Clears the heap |
+| toString | Returns the string representation of the heap |
+
 <a name="Graph"></a>
 
 ### Graph
