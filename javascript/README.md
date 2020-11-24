@@ -119,6 +119,16 @@ A Set is an unordered data structure that contains only unique elements. It beha
 
 A Binary Search Tree is a data structure that store items in a hierarchical order. This structure has nodes which contain link/references to other nodes, a left node and right node. The node to the left is less than the parent and the right is greater than the parent.
 
+| Method | Description |
+| ----------- | ------------ |
+| insert  | Inserts an item to the tree |
+| search  | Search an item from the tree |
+| inOrderTraverse  | Go through the items in the tree in-order traverse strategy |
+| preOrderTraverse | Go through the items in the tree pre-order traverse strategy |
+| postOrderTraverse | Go through the items in the tree post-order traverse strategy |
+| min | Returns the item with the minimum value |
+| max | Returns the item with the maximum value |
+
 <a name="Heap"></a>
 
 ### Heap
