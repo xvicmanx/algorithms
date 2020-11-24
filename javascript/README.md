@@ -45,7 +45,7 @@ A Stack is an ordered data structure which follows the LIFO (Last In First Out) 
 
 | Method | Description |
 | ----------- | ------------ |
-| push  | Inserts an item to the top of the stack|
+| push  | Inserts an item to the top of the stack |
 | peek  | Reads the element at the top of the stack without removing it |
 | pop | Removes the element at the top of the stack and return it |
 | size    | Returns the size of the Stack which is the number of elements inserted |
@@ -150,6 +150,16 @@ A Heap is a data structure that forms a kind of binary tree symbolically. In it 
 ### Graph
 
 A Graph is a non-linear data structure contains of nodes (vertices) and edges. The nodes are connected through the edges.
+
+| Method | Description |
+| ----------- | ------------ |
+| addVertice  | Adds a vertice to the graph |
+| addEdge  | Adds an edge between vertices |
+| getEdgeValue | Gets the value assigned to a given edge |
+| vertices  | Returns graph vertices |
+| adjacents | Returns the adjacents vertices of a given vertice |
+| clear | Clears the graph |
+| toString  | Returns the string representation of the graph |
 
 
 ## Playground
