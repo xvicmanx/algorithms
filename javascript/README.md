@@ -50,14 +50,27 @@ A Stack is an ordered data structure which follows the LIFO (Last In First Out) 
 | pop | Removes the element at the top of the stack and return it |
 | size    | Returns the size of the Stack which is the number of elements inserted |
 | empty | Returns whether the stack is empty or not |
-| clear    | Clears the queue |
-| toString |  Returns the string representation of the queue |
+| clear    | Clears the stack |
+| toString |  Returns the string representation of the stack |
 
 <a name="Dequeue"></a>
 
 ### Dequeue
 
 A Dequeue is an ordered data structure which follows the FIFO or LIFO (First In First Out or Last In First Out) strategy to access its internal items. This means that the first or last element added to the collection can be accessible and taken out. It can also add elements to the front or the back of the collection.
+
+| Method | Description |
+| ----------- | ------------ |
+| pushFront  | Inserts an item to the first position of the dequeue |
+| pushBack  | Inserts an item to the last position of the dequeue |
+| peekFront | Reads the element at first position of the dequeue without removing it |
+| peekBack | Reads the element at last position of the dequeue without removing it |
+| popFront | Removes the element at first position of the dequeue and return it |
+| popBack | Removes the element at lat position of the dequeue and return it |
+| size    | Returns the size of the dequeue which is the number of elements inserted |
+| empty | Returns whether the dequeue is empty or not |
+| clear    | Clears the dequeue |
+| toString |  Returns the string representation of the dequeue |
 
 
 <a name="LinkedList"></a>
