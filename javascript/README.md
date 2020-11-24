@@ -43,6 +43,16 @@ A Queue is an ordered data structure which follows the FIFO (First In First Out)
 
 A Stack is an ordered data structure which follows the LIFO (Last In First Out) strategy to access its internal items. This means that the last element added to the collection is the first accessible and being able to taken out.
 
+| Method | Description |
+| ----------- | ------------ |
+| push  | Inserts an item to the top of the stack|
+| peek  | Reads the element at the top of the stack without removing it |
+| pop | Removes the element at the top of the stack and return it |
+| size    | Returns the size of the Stack which is the number of elements inserted |
+| empty | Returns whether the stack is empty or not |
+| clear    | Clears the queue |
+| toString |  Returns the string representation of the queue |
+
 <a name="Dequeue"></a>
 
 ### Dequeue
