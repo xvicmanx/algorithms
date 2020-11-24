@@ -87,10 +87,10 @@ A LinkedList is a data structure that stores its elements one linking to the oth
 | getElementAt | Returns the value of an item at a given position in the list |
 | remove | Removes an item from the list |
 | removeAt | Removes an item at a given position |
-| size    | Returns the size of the Stack which is the number of elements inserted |
-| empty | Returns whether the stack is empty or not |
-| clear    | Clears the stack |
-| toString |  Returns the string representation of the stack |
+| size    | Returns the size of the list which is the number of elements inserted |
+| empty | Returns whether the list is empty or not |
+| clear    | Clears the list |
+| toString |  Returns the string representation of the list |
 
 
 <a name="Set"></a>
