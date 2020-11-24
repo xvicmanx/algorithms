@@ -27,6 +27,16 @@ Algorithms and data structures implementations in javascript.
 
 A Queue is an ordered data structure which follows the FIFO (First In First Out) strategy to access its internal items.This means that the first element added to the collection is the first accessible and being able to taken out.
 
+| Method | Description |
+| ----------- | ------------ |
+| enqueue  | Inserts an item to the last position of the queue |
+| peek     | Reads the element at first position of the queue without removing it |
+| dequeue  | Removes the element at first position of the queue and return it |
+| size     | Returns the size of the Queue which is the number of elements inserted |
+| empty    | Returns whether the queue is empty or not |
+| clear    | Clears the queue |
+| toString |  Returns the string representation of the queue |
+
 <a name="Stack"></a>
 
 ### Stack
