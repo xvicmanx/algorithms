@@ -99,6 +99,19 @@ A LinkedList is a data structure that stores its elements one linking to the oth
 
 A Set is an unordered data structure that contains only unique elements. It behaves similar to the matematical set {}
 
+| Method | Description |
+| ----------- | ------------ |
+| add  | Adds a new item to the set |
+| remove  | Removes an item from the set |
+| has | Returns whether an item exists in the set |
+| values | Returns an array of all the items in the set |
+| union | Returns the union of the current set with another given set. An union of sets is a new set with the the items that are in a set or another |
+| intersection | Returns the intersection of the current set with another given set. An intersection of sets is a new set with the the items that are in a set and another |
+| difference | Returns the difference of the current set with another given set. A different of sets is a new set with the the items that are in the current set but not the other|
+| empty | Returns whether the set is empty or not |
+| clear | Clears the set |
+| toString |  Returns the string representation of the set |
+
 
 <a name="BinarySearchTree"></a>
 
